@@ -5,7 +5,20 @@
   "author": "Faisal",
   "license": "ISC",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "build": "tsc",
+    "start": "node ./dist/server.js",
+    "lint": "biome lint ./src",
+    "lint:fix": "biome lint --write ./src",
+    "lint:unsafe": "biome lint --write --unsafe ./src",
+    "format": "biome format ./src",
+    "format:write": "biome format --write ./src",
+    "check": "biome check ./src",
+    "check:write": "biome check --write ./src",
+    "check:unsafe": "biome check --write --unsafe ./src",
+    "ci": "biome ci ./src",
+    "type-check": "tsc --noEmit",
+    "validate": "npm run type-check && npm run ci"
   },
   "packageManager": "pnpm@10.18.3",
   "dependencies": {
@@ -15,6 +28,7 @@
     "http-status": "^2.1.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.3",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
     "@types/node": "^24.10.0",
