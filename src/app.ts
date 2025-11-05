@@ -8,10 +8,10 @@ const app = express();
 
 // Cors configuration
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  }),
+	cors({
+		origin: "http://localhost:3000",
+		credentials: true,
+	}),
 );
 
 // Parser
@@ -20,12 +20,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // Health check route
 app.get("/api/v1/health", (_req, res) => {
-  res.json({
-    success: true,
-    message: "Server is running",
-    environment: config.nodeEnv,
-    timeStamp: new Date().toISOString(),
-  });
+	res.json({
+		success: true,
+		message: "Server is running",
+		environment: config.nodeEnv,
+		timeStamp: new Date().toISOString(),
+	});
 });
 
 // Not found and global error handler route

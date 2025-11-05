@@ -70,3 +70,5 @@ prisma/migrations/**/migration.sql.bak
 
 # Markdown docs
 md
+
+/src/generated/prisma
